@@ -1,0 +1,29 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Loan Has been rejected ! </p>
+    </div>
+  <% end %>
+
+  <%= label f, :amount %>
+  <%= number_input f, :amount %>
+  <%= error_tag f, :amount %>
+
+  <%= label f, :names %>
+  <%= text_input f, :names %>
+  <%= error_tag f, :names %>
+
+  <%= label f, :phoneNumber %>
+  <%= text_input f, :phoneNumber %>
+  <%= error_tag f, :phoneNumber %>
+
+  <%= label f, :email %>
+  <%= text_input f, :email %>
+  <%= error_tag f, :email %>
+
+  <%= checkbox f, :isHigher %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>
